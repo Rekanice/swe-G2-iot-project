@@ -30,4 +30,4 @@ cd <YourPath>/Test
 ```
 python3 xmas.py
 ```
-*if money & stock isn't an issue, of course.*
+* *if money & stock isn't an issue, of course.*
