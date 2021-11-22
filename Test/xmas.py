@@ -1,4 +1,6 @@
 #!/usr/bin/python
+import getpass
+
 def printlist(ls):
 	for item in ls:
 		print(' - ' + item)
@@ -8,7 +10,8 @@ src_file_name = 'xmaslist.txt'
 with open(src_file_name, 'r') as f:
 	content = f.readlines()
 
-print('Hello, Jason.')
+username = getpass.getuser()
+print('Hello,' + username)
 print('Xmas is coming soon. Here is your buy list:\n')
 printlist(content)
 
@@ -26,11 +29,12 @@ if(answer=='y'):
 			printlist(f.readlines())
 
 	if(answer == 'd'):
-		new = input('Enter the to-be-drop item: ')
+		drop = input('Enter the to-be-drop item: ')
 		with open(src_file_name, 'r+') as f:
 			content = f.readlines()
 			f.seek(0)
-			content.remove(new+'\n')
+			print(content)
+			content.remove(drop+'\n')
 			content_stringed = ''.join(content)
 			f.write(content_stringed)
 			f.truncate()
