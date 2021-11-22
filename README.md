@@ -8,7 +8,10 @@ Below you will find info about the folders & files, and how to run the files in 
 
 
 ### Xmas Buy List
-This program is for Milestone 1 Part 2 - Using Github.
+This program is for Milestone 1 Part 2 - Collaborating with Github.
+
+We're putting together the baddest Chirstmas wishlist that we will* buy this year.
+
 ##### Files Guide
 
 ```
@@ -27,4 +30,4 @@ cd <YourPath>/Test
 ```
 python3 xmas.py
 ```
-
+*if money & stock isn't an issue, of course.*
