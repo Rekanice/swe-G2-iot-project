@@ -19,7 +19,7 @@ if(answer=='y'):
 	if(answer == 'a'):
 		new = input('Enter the new item: ')
 		with open(src_file_name, 'a+') as f:
-			f.writelines(new)
+			f.writelines(new+'\n')
 			
 		with open(src_file_name, 'r') as f:
 			print('\nHere is the updated list:')
