@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Tell me a fact{% endblock %}
+{% block morecss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/fact.css') }}">
+{% endblock %}
+{% block content %}
+<figure class="quote">
+    <blockquote>
+        Vikings used the bones of slain animals when smithing new weapons believing this would enchant the weapon with the animals spirit. This actually made the weapons stronger because the carbon in the bones coupled with the iron made a primitive version of steel.
+    </blockquote>
+    <figcaption>
+      &mdash; J4bberwocky, <cite><a style="color: rgb(12, 83, 177) !important;" href="https://www.reddit.com/r/AskReddit/comments/4lmm61/what_is_a_fun_fact_that_always_blows_peoples_minds/">r/AskReddit</a></cite>
+    </figcaption>
+</figure>
+{% endblock %}

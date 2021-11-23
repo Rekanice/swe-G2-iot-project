@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Tell me a misconception{% endblock %}
+{% block morecss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/misconception.css') }}">
+{% endblock %}
+{% block content %}
+<figure class="quote">
+    <blockquote>
+        <h4>What do you think is the biggest misconception about college?</h4>
+        That I'd be able to learn stuff in depth. I’m living deadline to deadline and only realistically have time to learn test material.
+    </blockquote>
+    <figcaption>
+      &mdash; notanamateur, <cite><a style="color: rgb(12, 83, 177) !important;" href="https://www.reddit.com/r/college/comments/qrioq5/what_do_you_think_is_the_biggest_misconception/">r/college</a></cite>
+    </figcaption>
+</figure>
+{% endblock %}
