@@ -31,11 +31,11 @@ The students have only one way of knowing if a washing machine
 
 They have to go to the washing machine & manually see it for themselves. 
 
-This is a hassle, especially if they live at higher floors OR far from (& near to) the washing machines.
+This is a hassle, especially if they live at higher floors OR far from (and even near to) the washing machines.
 
 Imagine having to walk back & forth between your room & the washing machine. Not once, but multiple times.
 
-Doing laundry should be easy. Let's make the washing machines work for you, not against you.
+Doing laundry should be easy. Let's make the washing machines work FOR you, not against you.
 ```
 
 <br/>
