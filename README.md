@@ -2,7 +2,7 @@
 This is the repository for Group 2's IOT project for SWE course in UTM FKE. 
 
 ### Navigate this repo
-The list below stacks the most recently added folder at the top
+The list below stacks the most recently created folder at the top
 ```
 master
 L images       - A folder for storing the pics used in README.md files. 
