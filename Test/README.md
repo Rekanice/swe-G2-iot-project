@@ -4,7 +4,7 @@ This program is for Milestone 1 Part 2 - Collaborating with Github.
 
 We're putting together the baddest Christmas wishlist that we will* buy this year.
 
-##### Files Guide
+#### Files Guide
 
 ```
 Test
@@ -13,7 +13,7 @@ L xmas.py      - Python script that adds or removes items on the Christmas buy l
 ```
 
 
-##### How to run 
+#### How to run 
 1. In your local terminal (Linux here), navigate to the `Test` folder.
 ```
 cd <YourPath>/Test
