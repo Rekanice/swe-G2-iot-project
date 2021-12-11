@@ -1,33 +1,29 @@
 # swe-G2-iot-project
 This is the repository for Group 2's IOT project for SWE course in UTM FKE. 
 
-Below you will find info about the folders & files, and how to run the files in your local environment.
-
+### Navigate this repo
+Most recent folder is listed here at the top
+```
+master
+L Flask Server - A test Flask Web app for suggesting a content (Milestone 1.3) 
+L Test         - A Python script to test collaborating on Github (Milestone 1.2)
+```
 
 ---
 
+## Main Project: Idle  🧺
 
-### Xmas Buy List
-This program is for Milestone 1 Part 2 - Collaborating with Github.
+### Problem Statement
+Students living in UTM dorms use a shared set of washing machine to do their laundry. 
 
-We're putting together the baddest Christmas wishlist that we will* buy this year.
+They have only one way of knowing if a washing machine is 
+- idle & available to use 
+- busy & finished running
 
-##### Files Guide
+They have to go to the washing machine & manually see for themselves. 
 
-```
-Test
-L xmaslist.txt - Contains the list of items to buy for the upcoming Christmas. 
-L xmas.py      - Python script that adds or removes items on the Christmas buy list based on user input.
-```
+This is a hassle especially if they live far from the washing machine or at higher floors. Imagine having to walk all the way back to your room, disappointed, after realising the washing machine in use. Even those living close to the washing machine are not free from this inconvenience.
+
+### Our Solution
 
 
-##### How to run 
-1. In your local terminal (Linux here), navigate to the `Test` folder.
-```
-cd <YourPath>/Test
-```
-2. Run the python script, and follow the prompt accordingly.
-```
-python3 xmas.py
-```
-**if money & stock aren't an issue, of course.*
