@@ -75,10 +75,9 @@ A full stack IOT application to automate the checking if a washing machine is bu
 <br/>
 
 ### Communication Protocol
-- HTTP 
-- MQTT
-- ESP NOW
-
+```
+HTTP / MQTT / ESP NOW
+```
 *Will test out & choose the one that suits our use case after testing.*
 
 <br/>
