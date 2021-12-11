@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+actor "Dorm residents" as U1
+package "Dashboard App" as APP{
+	usecase "View active & idle WMs" as UC1
+	usecase "View WM uptime stats" as UC2
+	usecase "Get alerts for idle WMs" as UC3
+}
+note bottom of APP
+	WM = Washing Machine
+end note
+U1 --> UC1
+U1 --> UC2
+U1 --> UC3
+@enduml
