@@ -24,6 +24,12 @@ They have to go to the washing machine & manually see for themselves.
 
 This is a hassle especially if they live far from the washing machine or at higher floors. Imagine having to walk all the way back to your room, disappointed, after realising the washing machine in use. Even those living close to the washing machine are not free from this inconvenience.
 
+
 ### Our Solution
+A full stack IOT application to automate the checking of if a washing machine is in use or idle, & relaying this info to our dashboard app for users to see.
+
+Use case diagram 
+![Use case diagram](images/usecase diagram 1.png)
+
 
 
