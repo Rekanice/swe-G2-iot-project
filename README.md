@@ -84,10 +84,10 @@ HTTP / MQTT / ESP NOW
 
 ### Cloud Platform & Web server
 ```
-Backend server: Flask
-Cloud platform: 
+Backend framework      : Flask
+Cloud hosting platform : Heroku
 ```
-Check out our Flask toy app [here]().
+Check out our Flask toy app [here](https://tell-me-something-flask-app.herokuapp.com/joke).
 
 <br/>
 
