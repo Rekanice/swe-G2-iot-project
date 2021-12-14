@@ -55,7 +55,7 @@ A full stack IOT application to automate the checking if a washing machine is bu
 <br/>
 
 ### System Architecture
-![Overview of the tech stack]()
+![Overview of the tech stack](https://github.com/Rekanice/swe-G2-iot-project/blob/e0d91b83c3a7868e55449eced2450638003cc4a4/images/system_arch_pic.png)
 
 <br/>
 
