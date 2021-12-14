@@ -87,7 +87,10 @@ HTTP / MQTT / ESP NOW
 Backend framework      : Flask
 Cloud hosting platform : Heroku
 ```
-Check out our Flask toy app [here](https://tell-me-something-flask-app.herokuapp.com/joke).
+Check out our Flask toy app [here](https://tell-me-something-flask-app.herokuapp.com/).
+Check out our Django toy app [here](https://this-is-django-1.herokuapp.com/)
+Here is a [video]() of deploying the Flask app in Heroku.
+Here is a [video]() of deploying the Django app in Heroku.
 
 <br/>
 
