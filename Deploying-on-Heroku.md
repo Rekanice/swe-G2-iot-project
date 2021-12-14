@@ -1,15 +1,16 @@
 ## Create virtual environment & initialize a git repo
+If this has not been done when the web app was created, you can create a new folder & do these steps, & then migrate the code files from your web app into here.
 ```
-sudo apt install -y python3-venv
+sudo apt install -y python3-venv   --> Install a python virtual environment builder
 
-cd <to your desired location>
+cd <to your desired project folder location>
 mkdir PythonApp
 cd PythonApp
 
-python3 -m venv django_env
-source my_env/bin/activate
+python3 -m venv django_env      --> Create a virtual env named django_env
+source django_env/bin/activate  --> Activate the virtual env
 
-pip install django OR flask
+pip install django OR flask 
 ```
 <br/>
 
