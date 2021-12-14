@@ -93,7 +93,7 @@ Check out our Django toy app [here](https://this-is-django-1.herokuapp.com/)
 
 Here is a [video](https://youtu.be/oEzaFD8RCEE) of deploying the Flask/Deploy app in Heroku.
 
-This is the accompanying article on [Deploying the Django app in Heroku](https://github.com/Rekanice/swe-G2-iot-project/blob/f4e41c6ab807bea9e7c15f0c16e89c8eff10dd4d/Deploying-on-Heroku.md).
+This is the accompanying article on [Deploying the Flask / Django app in Heroku](https://github.com/Rekanice/swe-G2-iot-project/blob/f4e41c6ab807bea9e7c15f0c16e89c8eff10dd4d/Deploying-on-Heroku.md).
 
 <br/>
 
