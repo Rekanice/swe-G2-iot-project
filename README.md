@@ -104,6 +104,8 @@ Mobile : MIT Inventor or Flutter
 ```
 *Will test out & choose the one that can be executed well.*
 
+Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app prototype made in MIT App Inventor.
+
 <br/>
 
 **UI Wireframe - Version 1**
