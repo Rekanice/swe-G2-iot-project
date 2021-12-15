@@ -28,13 +28,13 @@ pip install gunicorn
 ---
 
 
-Flask: Create a `Procfile` file with this command. The `<app>` is the name of your Flask file containing the `app.run()` command.
+Flask: Create a `Procfile` file with this command. The `<app>` is the name of your Flask .py file containing the `app.run()` command.
 ```
 echo "web: gunicorn app:<app>" > Procfile
 ```
   
   
-Django: Create a `Procfile` file with this command. The `<app>` is the name of your Django Project Admin folder that you created using the `django-admin startproject mysite` terminal command at the very start.
+Django: Create a `Procfile` file with this command. The `<app>` is the name of your Django Project Admin folder that you created using the `django-admin startproject <app>` terminal command at the very start.
 ```
 echo "web: gunicorn <app>.wsgi" > Procfile
 ```
