@@ -11,6 +11,8 @@ python3 -m venv django_env      --> Create a virtual env named django_env
 source django_env/bin/activate  --> Activate the virtual env
 
 pip install django OR flask 
+
+git init
 ```
 <br/>
 
