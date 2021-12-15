@@ -28,17 +28,22 @@ pip install gunicorn
 ---
 
 
-Flask: Create a `Procfile` file with this command
+Flask: Create a `Procfile` file with this command. The `<app>` is the name of your Flask file containing the `app.run()` command.
 ```
 echo "web: gunicorn app:<app>" > Procfile
 ```
   
   
-Django: Create a `Procfile` file with this command
+Django: Create a `Procfile` file with this command. The `<app>` is the name of your Django Project Admin folder that you created using the `django-admin startproject mysite` terminal command at the very start.
 ```
 echo "web: gunicorn <app>.wsgi" > Procfile
-pip install django-on-heroku  
 ```
+
+
+Django: Install this library to do the background work for deploying Django to Heroku
+```
+pip install django-on-heroku  
+```  
   
   
 Django: At the top of `settings.py` add the following statement.
@@ -46,6 +51,7 @@ Django: At the top of `settings.py` add the following statement.
 import os
 import django_on_heroku
 ```
+  
   
 Django: At the end of `settings.py`, add the following statement.
 ```
