@@ -83,6 +83,7 @@ ALLOWED_HOSTS = ['https://<heroku-project-name>.herokuapp.com/', 'localhost', ' 
 Create `requirement.txt` to state all the dependencies of the project, & commit the project.  
 ```
 pip freeze > requirements.txt
+git init
 git add .
 git commit -m "Deploy to Heroku"
 ```
