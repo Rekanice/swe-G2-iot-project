@@ -110,8 +110,14 @@ Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app
 
 **UI Wireframe - Version 1**
 
-![Figma Design of the UI](https://www.figma.com/file/upOI1YDz3MclTJADYTzi7z/Figma-UI?node-id=0%3A1)
+[Figma Design of the UI](https://www.figma.com/file/upOI1YDz3MclTJADYTzi7z/Figma-UI?node-id=0%3A1)
 
+
+![page1](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page1.png)
+![page2](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page2.png)
+![page3](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page3.png)
+![page4](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page4.png)
+![page5](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page5.png)
 
 
 
