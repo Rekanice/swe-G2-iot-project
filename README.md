@@ -110,7 +110,10 @@ Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app
 
 **UI Wireframe - Version 1**
 
-![Figma Design of the UI]()
+![Figma Design of the UI](https://www.figma.com/file/upOI1YDz3MclTJADYTzi7z/Figma-UI?node-id=0%3A1)
+
+
+
 
 
 
