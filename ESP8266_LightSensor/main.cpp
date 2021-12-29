@@ -21,14 +21,17 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(LDR) == 1) // if ldr sensor's digital input is high
+  // ldr sensor's digital input is low when light is detected (LDR indicator is off), 
+  // high when dark (LDR indicator lights up). 
+  // The LDR indicator & the digitalRead logic levels are inverse.
+  if(digitalRead(LDR) == 1) 
   {
-    // send "WM is busy" message to flask server, and then periodic deep sleep 
-    Serial.println("There's light!");
-  }
-  else{
     // send "WM is done" message to flask server
     Serial.println("It's dark!");
+  }
+  else{
+    // send "WM is busy" message to flask server, and then periodic deep sleep 
+    Serial.println("There's light!");
   }
 }
 
