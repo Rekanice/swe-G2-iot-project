@@ -36,8 +36,8 @@ void loop() {
 }
 
 void startWifi() {  
-  
-  WiFi.begin(ssid, password);             // Connect to the network
+  WiFi.mode(WIFI_STA);               // Specify Wifi connection mode
+  WiFi.begin(ssid, password);        // Connect to the network, remains active until connected  or specified max #attempts to expire
   Serial.print("Connecting to ");
   Serial.print(ssid); Serial.println(" ...");
   
