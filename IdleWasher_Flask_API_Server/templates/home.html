@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family:'Noto Sans',monospace, 'Segoe UI', sans-serif;
+        }
+        p, div {
+            font-family:'Noto Sans', monospace, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            vertical-align: middle;
+            
+        }
+        .wm-element-text {
+            font-size: 12px;
+        }
+        .updatetime, .legend {
+            font-size: 10px;
+        }
+
+    </style>
+    
+    <title>Idle Washer</title>
+</head>
+<body style="background: rgb(245, 245, 245);">
+    <div>
+        <h1>Idle Washing Machines</h1>
+    </div>
+    
+    <div>
+        <p>Location: K10, UB1, GF</p>
+        {% if wm_is_idle==0 %}
+        <div style="
+            width:50px; 
+            height:50px; 
+            border:2px solid; 
+            background-color: #c5c5c5; 
+            border-color:#b9b9b9; 
+            border-radius:4px;
+            text-align:center;"> 
+            <p class="wm-element-text"><span style="font-family:monospace; color:#868686;">Wm 1</span></p>
+        </div>
+        {% endif %}
+        {% if wm_is_idle==1 %}
+        <div style="
+            width:50px; 
+            height:50px; 
+            border:2px solid; 
+            background-color: #f5a003; 
+            border-color:#f08000; 
+            border-radius:4px;
+            text-align:center;"> 
+            <p class="wm-element-text"><span style="font-family:monospace; color:#2e2e2e;"><b>Wm 1</b></span></p>
+        </div>
+        {% endif %}
+        <p class="updatetime">Last updated at {{ update_time }} </p>
+    </div>
+    <br>
+    <div >
+        <p class="legend"><b>Legend</b></p>
+        <p class="legend">🔘 <em> Idle </em> &emsp;🟠 <em> Busy </em></p>
+    </div>
+</body>
+</html>
