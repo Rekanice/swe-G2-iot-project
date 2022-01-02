@@ -59,7 +59,22 @@
             
             <div style="display:flex; flex-direction:column; align-items: flex-start;">
                 <p>Location: K10, UB1, GF right wing</p>
-                {% if wm_is_idle==0 %}
+                {% if gotLight %}
+                <div style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width:50px; 
+                    height:50px; 
+                    border:2px solid; 
+                    background-color: #f5a003; 
+                    border-color:#f08000; 
+                    border-radius:4px;
+                    text-align:center;"> 
+                    <p class="wm-element-text"><span style="font-family:monospace; color:#2e2e2e;"><b>Wm 1</b></span></p>
+                </div>
+                
+                {% else %}
                 <div style="
                     display: flex;
                     justify-content: center;
@@ -75,21 +90,7 @@
                     <p class="wm-element-text"><span style="font-family:monospace; color:#868686;">Wm 1</span></p>
                 </div>
                 {% endif %}
-                {% if wm_is_idle==1 %}
-                <div style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width:50px; 
-                    height:50px; 
-                    border:2px solid; 
-                    background-color: #f5a003; 
-                    border-color:#f08000; 
-                    border-radius:4px;
-                    text-align:center;"> 
-                    <p class="wm-element-text"><span style="font-family:monospace; color:#2e2e2e;"><b>Wm 1</b></span></p>
-                </div>
-                {% endif %}
+                
                 <p class="updatetime">Last updated at {{ update_time }} </p>
             </div>
             <br>
