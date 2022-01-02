@@ -30,7 +30,11 @@
     </style>
     
     <title>Idle Washer</title>
+
+    {{ turbo() }}  <!-- Calling this function to initialize the turbo.js library. -->
+    
 </head>
+
 <body style="background: rgb(245, 245, 245);">
     <div id="bg-flex-container" style="      
         display:flex;
@@ -58,40 +62,17 @@
             </div>
             
             <div style="display:flex; flex-direction:column; align-items: flex-start;">
-                <p>Location: K10, UB1, GF right wing</p>
-                {% if gotLight %}
-                <div style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width:50px; 
-                    height:50px; 
-                    border:2px solid; 
-                    background-color: #f5a003; 
-                    border-color:#f08000; 
-                    border-radius:4px;
-                    text-align:center;"> 
-                    <p class="wm-element-text"><span style="font-family:monospace; color:#2e2e2e;"><b>Wm 1</b></span></p>
-                </div>
+                <p>Location: <code style="    
+                    color: #383838;
+                    font-size: 10px;
+                    font-weight: lighter;
+                    border: 0.1px solid #adadad;
+                    border-radius: 3px;
+                    padding: 0.1rem 0.4rem;"
+                    >K10, UB1, GF right wing</code> </p>
                 
-                {% else %}
-                <div style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width:50px; 
-                    height:50px; 
-                    border:2px solid; 
-                    background-color: #c5c5c5; 
-                    border-color:#b9b9b9; 
-                    border-radius:4px;
-                    text-align:center;
-                    vertical-align: middle;"> 
-                    <p class="wm-element-text"><span style="font-family:monospace; color:#868686;">Wm 1</span></p>
-                </div>
-                {% endif %}
+                {% include 'wm_element.html' %}
                 
-                <p class="updatetime">Last updated at {{ update_time }} </p>
             </div>
             <br>
             <div >
