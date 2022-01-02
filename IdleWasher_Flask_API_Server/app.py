@@ -1,52 +1,50 @@
 from flask import Flask
 from flask import render_template, request
-import time 
+from time import localtime, strftime
 import os
 import logging 
+from turbo_flask import Turbo
+import threading
 
 logging.basicConfig(level=logging.DEBUG)
 
 # Replace these variables initial values with the previous values in database later
-wm_is_idle = 0
-update_time = 0 
 gotLight = 0
+update_time = 0 
+
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+turbo = Turbo(app)
 
 @app.route("/", methods=['GET','POST'])
 def home():
-    global wm_is_idle
-    global update_time
-    # global gotLight
+    global gotLight
 
     if request.method == 'POST':
-        
-        global gotLight
-
-        # Parse LDR sensor reading
-        app.logger.info(request.form)
         gotLight = request.form.get('light')
-        app.logger.info("gotLight = " + str(gotLight))
+        app.logger.info(request.form)
+        app.logger.info("gotLight = " + gotLight)     
         print()
 
-        # Time at which sensor reading is taken
-        t = time.localtime()
-        update_time = time.strftime("%H:%M", t)
-
-        return render_template(
-        'home.html', 
-        update_time = update_time, 
-        gotLight  = gotLight)
+        return render_template('home.html')
     
     # For GET requests, show the global gotLight variable value passed to template
-    app.logger.info("gotLight=" + str(gotLight))
+    app.logger.info("gotLight=" + str(gotLight)) 
     print()
 
     return render_template(
-        'home.html', 
-        update_time = update_time, 
-        gotLight  = gotLight)
+        'home.html')
 
+
+@app.context_processor
+def injectSensorData():
+    global gotLight
+    app.logger.info("injectSensorData ran. Pass gotlight = " + str(gotLight))
+    return dict(gotLight = int(gotLight))
+
+@app.context_processor
+def injectDateTime():
+    app.logger.info("injectDateTime ran")
+    return dict(update_time = strftime("%Y %b %d, %a %I:%M %p", localtime()) )
 
 
 if __name__ == '__main__':
