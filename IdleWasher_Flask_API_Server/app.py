@@ -1,86 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <style>
-        html { 
-            zoom: 2; 
-        }
-        h1 {
-            font-family:'Noto Sans',monospace, 'Segoe UI', sans-serif;
-        }
-        p, div {
-            font-family:'Noto Sans', monospace, 'Segoe UI', sans-serif;
-            font-size: 13px;
-            vertical-align: middle;
-        }
-        .wm-element-text {
-            font-size: 12px;
-        }
-        .updatetime, .legend {
-            font-size: 10px;
-        }
+from flask import Flask
+from flask import render_template, request
+from time import localtime, strftime, sleep
+import os
+import logging 
+from turbo_flask import Turbo
+import threading
 
-    </style>
-    
-    <title>Idle Washer</title>
+logging.basicConfig(level=logging.DEBUG)
 
-    {{ turbo() }}  <!-- Calling this function to initialize the turbo.js library. -->
-    
-</head>
+# Replace these variables initial values with the previous values in database later
+gotLight = 0
+update_time = 0 
 
-<body style="background: rgb(245, 245, 245);">
-    <div id="bg-flex-container" style="      
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items: center;
-        ">
-        <div id="content-flex-container" style="
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-start;
-        align-items: flex-start;
-        ">
-            <div style="
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;">
-                <h1>Idle Washing Machines </h1> 
-                <div style="
-                margin-block-start: 0.67em;
-                margin-block-end: 0.67em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-                font-size: 2em;"> &nbsp;&#129530;</div>
-            </div>
-            
-            <div style="display:flex; flex-direction:column; align-items: flex-start;">
-                <p>Location: <code style="    
-                    color: #383838;
-                    font-size: 10px;
-                    font-weight: lighter;
-                    border: 0.1px solid #adadad;
-                    border-radius: 3px;
-                    padding: 0.1rem 0.4rem;"
-                    >K10, UB1, GF right wing</code> </p>
-                
-                {% include 'wm_element.html' %}
-                
-            </div>
-            <br>
-            <div >
-                <p class="legend"><b>Legend</b></p>
-                <p class="legend"> &#11036; <em> Idle </em> &emsp; &#128999; <em> Busy </em></p>
-            </div>
+app = Flask(__name__)
+turbo = Turbo(app)
 
-    </div>
+@app.route("/", methods=['GET','POST'])
+def home():
+    global gotLight
+
+    # For POST requests, show the data received
+    if request.method == 'POST':
+        app.logger.info(request.form)  
+        print()
+        return render_template('home.html')
     
-</body>
-</html>
+    # For GET requests, show the global gotLight variable value passed to template
+    app.logger.info("During GET request, gotLight=" + str(gotLight)) 
+    print()
+    return render_template('home.html')
+
+
+@app.context_processor
+def injectSensorData():
+    global gotLight
+    app.logger.info("injectSensorData ran. Pass gotlight = " + str(gotLight))
+    return dict(gotLight = int(gotLight))
+
+@app.context_processor
+def injectDateTime():
+    app.logger.info("injectDateTime ran")
+    return dict(update_time = strftime("%Y %b %d, %a %I:%M %p", localtime()) )
+
+
+# Background updater thread that runs before 1st client connects
+@app.before_first_request
+def before_first_request():
+    threading.Thread(target=update_sensor_data).start()
+
+def update_sensor_data():
+    with app.app_context():
+        while True:
+            sleep(5)
+            turbo.push(turbo.replace(render_template('wm_element.html'), 'wm_element'))
+
+
+if __name__ == '__main__':
+    port = os.environ.get("PORT", 5000)              # Get port number of env at runtime, else use default port 5000
+    app.run(debug=False, host='0.0.0.0', port=port)  # 0.0.0.0 port forwarding resolves the host IP address at runtime
