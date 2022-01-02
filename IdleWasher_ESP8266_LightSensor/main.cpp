@@ -18,11 +18,11 @@ const char *password = "CHANGE ME";
 
 // HTTP settings for LOCAL HOSTED Flask server
 const int portnum = 5000;
-IPAddress server_ip(10,209,105,185);
+IPAddress server_ip("CHANGE ME");
 // IPAddress gateway(192,168,1,1);
 // IPAddress subnet(255,255,255,0);
 // const char * server_url = "http://idle-washer.herokuapp.com/";
-const char * server_url = "http://10.209.105.185:5000/";
+const char * server_url = "CHANGE ME";
 
 
 // LDR pins
