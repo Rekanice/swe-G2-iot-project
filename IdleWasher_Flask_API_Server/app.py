@@ -22,6 +22,7 @@ def home():
     # For POST requests, show the data received
     if request.method == 'POST':
         app.logger.info(request.form)  
+        gotLight = request.form.get('light')
         print()
         return render_template('home.html')
     
