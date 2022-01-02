@@ -1,25 +1,29 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>   
-#include <ESP8266Ping.h> 
+// #include <ESP8266Ping.h> 
 #include <string>
 #include <ESP8266HTTPClient.h>
-#include <ArduinoJson.h>
+// #include <ArduinoJson.h>
 
 // Wifi credentials
 const char *ssid = "CHANGE ME"; 
 const char *password = "CHANGE ME";  
 
-// HTTP settings for LOCAL HOSTED Flask server
-WiFiClient client;
-const int portnum = 5000;
-IPAddress server_ip("CHANGE ME");
-IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0);
-const char * server_url = "CHANGE ME";
+// // HTTPS for HEROKU HOSTED Flask server
+// WiFiClientSecure client;
+// const char *server_url = "https://idle-washer.herokuapp.com/";  
+// const int portnum = 443;
+// const char *fingerprint = "99e0da5fa79241751bd541fda5daeaf7e4a70a72";
 
-// Ping a remote machine
-IPAddress remote_ip("CHANGE ME");
-// const char* remote_host = "";
+
+// HTTP settings for LOCAL HOSTED Flask server
+const int portnum = 5000;
+IPAddress server_ip(10,209,105,185);
+// IPAddress gateway(192,168,1,1);
+// IPAddress subnet(255,255,255,0);
+// const char * server_url = "http://idle-washer.herokuapp.com/";
+const char * server_url = "http://10.209.105.185:5000/";
+
 
 // LDR pins
 #define LDR 5
@@ -30,14 +34,12 @@ uint8 gotLight;
 void setEspPins();
 void startWifi();
 void sendSensorData();
-void pingHost();
 
 
 void setup() {
   setEspPins();
   Serial.begin(115200); 
   startWifi();
-  pingHost();
   Serial.println();
 }
 
@@ -66,7 +68,7 @@ void loop() {
 
 
 void startWifi() { 
-  WiFi.config(server_ip, gateway, subnet);  // For local hosted server
+  // WiFi.config(server_ip, gateway, subnet);  // For local hosted server
   WiFi.mode(WIFI_STA);               // Specify Wifi connection mode
   WiFi.begin(ssid, password);        // Connect to the network, remains active until connected or specified max #attempts expired
   Serial.print("Connecting to ");
@@ -106,31 +108,6 @@ void sendSensorData(){
   http.end(); //Close connection
   Serial.println("Sent POST URLencoded request to server.");
   
-
-  String jsonData;
-  StaticJsonDocument<300> jb;
-  jb["light"] = gotLight;
-  jb["key"] = "value";
-  serializeJson(jb, jsonData);
-
-  http.addHeader("Content-Type", "application/json"); 
-  httpCode = http.POST(jsonData); //Send the request
-  payload = http.getString(); //Get the response payload
-  Serial.println(httpCode); //Print HTTP return code
-  http.end(); //Close connection
-  Serial.println("Sent POST json request to server.");
-
   Serial.println();
 
 } 
-
-void pingHost() {
-  Serial.print("Pinging host: ");
-  Serial.println(remote_ip);
-
-  if(Ping.ping(remote_ip)) {
-    Serial.println("Success!!");
-  } else {
-    Serial.println("Error :(");
-  }
-}
