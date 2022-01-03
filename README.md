@@ -150,6 +150,7 @@ Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app
 The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku via HTTP POST requests. The Flask web app dynamically updates the status of the washing machine display box, with a ~5s delay (this is negligible in real use case) without the user needing to refresh the page.
 
 [Heroku web app](https://idle-washer.herokuapp.com/)
+
 [Demo video](https://youtu.be/WuiT0wlSRcE)
 
 ![Sensor setup](https://github.com/Rekanice/swe-G2-iot-project/blob/bbef47352ffa9df50c8eafda36a5559154607df4/images/ldr.jpg)
