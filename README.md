@@ -5,19 +5,41 @@ This is the repository for Group 2's IOT project for SWE course in UTM FKE.
 The list below stacks the most recently created folder at the top
 ```
 master
-L images       - A folder for storing the pics used in README.md files. 
-L UML diagrams - A folder for the UML models for the main project (Milestone 2.1)
-L Flask Server - A test Flask Web app for suggesting a content (Milestone 1.3) 
-L Test         - A Python script to test collaborating on Github (Milestone 1.2)
+L IdleWasher_Flask_API_Server     - A folder for the code used in making the Flask web server for the project (Milestone 3)
+L IdleWasher_ESP8266_LightSensor  - A folder for code used in the ESP8266 reading & sending data to server (Milestone 3)
+L images        - A folder for storing the pics used in README.md files. 
+L UML diagrams  - A folder for the UML models for the main project (Milestone 2.1)
+L Test Flask Server - A test Flask Web app for suggesting a content (Milestone 1.3) 
+L Test              - A Python script to test collaborating on Github (Milestone 1.2)
 ```
 
----
+
+### Table of contents
+1. [Main Project Details](#project)
+    1. [Problem Statement](#prob)
+    2. [Proposed solution](#sol)
+    3. [Use Case diagram](#uc)
+    4. [System architecture](#sysarc)
+    5. [Hardware](#hw)
+    6. [Communication Protocol](#comm)
+    7. [Server & Hosting](#cloud)
+    8. [Frontend](#ui)
+
+2. [Updates](#updates)
+    1. [Milestone 3: Send realtime sensor data to cloud server](#mi3)
+    2. [Milestone 4:]()
+    3. [Milestone 5:]()
+    4. [Milestone 6:]()
+    5. [Milestone 7:]()
+
+
+
 
 <br/>
 
-## Main Project: Idle Washer 🧺
+# Main Project: Idle Washer 🧺 <a name="project"></a>
 
-### Problem Statement
+### Problem Statement <a name="prob"></a>
 
 >**tldr**: *Inconvenient for dorm residents to physically check if shared washing machine is available to use.*
 ```
@@ -40,12 +62,12 @@ Doing laundry should be easy. Let's make the washing machines work FOR you, not 
 
 <br/>
 
-### Our Solution
+### Our Solution <a name="sol"></a>
 A full stack IOT application to automate the checking if a washing machine is busy or idle, and relay this info to a dashboard app for users to see & plan their laundry trip to the washing machine accordingly.
 
 <br/>
 
-### Use case diagram
+### Use case diagram <a name="uc"></a>
 
 ![Use case diagram](https://github.com/Rekanice/swe-G2-iot-project/blob/55faecf1ef122f0b1f06967e5f15ea0fc0469247/UML%20diagrams/usecase_diagram1.png)
 
@@ -54,12 +76,12 @@ A full stack IOT application to automate the checking if a washing machine is bu
 
 <br/>
 
-### System Architecture
+### System Architecture <a name="sysarc"></a>
 ![Overview of the tech stack](https://github.com/Rekanice/swe-G2-iot-project/blob/e0d91b83c3a7868e55449eced2450638003cc4a4/images/system_arch_pic.png)
 
 <br/>
 
-### Hardware
+### Hardware <a name="hw"></a>
 ```
 - Sensor : RGB light sensor module
 - MCU    : NodeMCUv1 ESP8266 
@@ -69,20 +91,20 @@ A full stack IOT application to automate the checking if a washing machine is bu
 
 <br/>
 
-#### Hardware Setup
+#### Hardware Setup <a name="hwsetup"></a>
 ![Device setup](https://github.com/Rekanice/swe-G2-iot-project/blob/d76a08e94ea6444962755b7ac9bf270c3a8d7b9a/images/device_setup.jpg)
 
 <br/>
 
-### Communication Protocol
+### Communication Protocol <a name="comm"></a>
 ```
-HTTP / MQTT / ESP NOW
+HTTP
 ```
 *Will test out & choose the one that suits our use case after testing.*
 
 <br/>
 
-### Cloud Platform & Web server
+### Cloud Platform & Web server <a name="cloud"></a>
 ```
 Backend framework      : Flask
 Cloud hosting platform : Heroku
@@ -97,7 +119,7 @@ This is the accompanying article on [Deploying the Flask / Django app in Heroku]
 
 <br/>
 
-### Dashboard Frontend
+### Dashboard Frontend <a name="ui"></a>
 ```
 Web    : Basic HTML-CSS-JS or Flutter
 Mobile : MIT Inventor or Flutter
@@ -119,9 +141,20 @@ Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app
 ![page4](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page4.png)
 ![page5](https://github.com/Rekanice/swe-G2-iot-project/blob/c0d8e5974da57e7b26fbca8b5b33419303bdb059/images/figma_v1_page5.png)
 
+<br/>
 
+# Updates <a name="updates"></a>
 
+### Milestone 3: Send sensor data directly to Flask server <a name="mi3"></a>
 
+The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku via HTTP POST requests. The Flask web app dynamically updates the status of the washing machine display box, with a ~5s delay (this is negligible in real use case) without the user needing to refresh the page.
 
+[Demo video](https://youtu.be/WuiT0wlSRcE)
+
+![Sensor setup](https://github.com/Rekanice/swe-G2-iot-project/blob/bbef47352ffa9df50c8eafda36a5559154607df4/images/ldr.jpg)
+
+![Flask web server UI](https://github.com/Rekanice/swe-G2-iot-project/blob/bbef47352ffa9df50c8eafda36a5559154607df4/images/flaskwebhtml.png)
+
+<br/>
 
 
