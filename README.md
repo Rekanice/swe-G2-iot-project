@@ -27,7 +27,7 @@ L Test              - A Python script to test collaborating on Github (Milestone
 
 2. [Updates](#updates)
     1. [Milestone 3: Send realtime sensor data to cloud server](#mi3)
-    2. [Milestone 4:]()
+    2. [Milestone 4: Send sensor data to database, Flask server reads data from database](#mi4)
     3. [Milestone 5:]()
     4. [Milestone 6:]()
     5. [Milestone 7:]()
@@ -159,4 +159,21 @@ The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku
 
 <br/>
 
+### Milestone 4: Send sensor data to database, Flask server reads data from database <a name="mi4"></a>
 
+The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku via HTTP POST requests. The Flask server has a dedicated url to accept & parse the POST request & store the data into the connected PostgreSQL database. The Flask web app dynamically updates the UI by querying necessary data from the database, and processing them in the application to be delivered in the UI templates.
+
+[Demo video](https://youtu.be/-4hxKUfy3Ok)
+
+Database tables design: 
+1. Washing_Machine : contains all the attributes about the washing machines.
+![Washing Machine table](https://github.com/Rekanice/swe-G2-iot-project/blob/b5c75e600e6379d77504918cd4bc5cbfa9e4ab16/images/db_table_washing_machines.jpg)
+
+2. Sensor_Log: records the detected light data from a given washing machine (identified by its wm_id), every 5 minutes. The two tables are linked by the wm_id column.
+
+
+![Sensor log table](https://github.com/Rekanice/swe-G2-iot-project/blob/b5c75e600e6379d77504918cd4bc5cbfa9e4ab16/images/db_table_sensor_log.jpg)
+
+![Flask web server UI](https://github.com/Rekanice/swe-G2-iot-project/blob/b5c75e600e6379d77504918cd4bc5cbfa9e4ab16/images/flask_webpage_with_static_heatmap.jpg)
+
+<br/>
