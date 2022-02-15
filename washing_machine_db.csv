@@ -1,0 +1,14 @@
+id,college,block,location,room_index,money_input,is_working
+1,K10,UB1,GF South Wing,1,t,t
+2,K10,UB1,GF South Wing,2,t,t
+3,K10,UB1,GF South Wing,3,f,t
+4,K10,UB1,GF North Wing,1,f,t
+5,K10,UB1,GF North Wing,2,f,t
+6,K10,UB2,GF South Wing,1,f,t
+7,K10,UB2,GF South Wing,2,f,t
+8,K10,UB2,GF South Wing,3,t,t
+9,K10,UB2,GF South Wing,4,t,t
+10,K10,UB2,GF South Wing,5,t,t
+11,K10,UB2,GF North Wing,1,t,t
+12,K10,UB2,GF North Wing,2,f,t
+13,K10,UB2,GF North Wing,3,t,t
