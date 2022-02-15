@@ -28,9 +28,8 @@ L Test              - A Python script to test collaborating on Github (Milestone
 2. [Updates](#updates)
     1. [Milestone 3: Send realtime sensor data to cloud server](#mi3)
     2. [Milestone 4: Send sensor data to database, Flask server reads data from database](#mi4)
-    3. [Milestone 5:]()
-    4. [Milestone 6:]()
-    5. [Milestone 7:]()
+    3. [Milestone 5: Dashboard UI improvements](#mi5)
+
 
 
 
@@ -177,3 +176,21 @@ Database tables design:
 ![Flask web server UI](https://github.com/Rekanice/swe-G2-iot-project/blob/b5c75e600e6379d77504918cd4bc5cbfa9e4ab16/images/flask_webpage_with_static_heatmap.jpg)
 
 <br/>
+
+### Milestone 5: Dashboard UI improvements <a name="mi5"></a>
+
+From the feedback on the dashboard in milestone 4, these changes were made:
+- more washing machine indicators
+- a more recent timeline plot (hence, we went with the last hour readings in 5 minute intervals)
+- a more dashboard box-style layout
+
+All the data required by the dashboard to display are served via APIs in the Flask app.py. The necessary data are queried from the PostgreSQL database and processed before passing to the frontend.
+
+
+The repository for cloning and reproducing our milestone 5 Flask app is transferred to a new repository ([link here](https://github.com/Rekanice/Check-WM-Dashboard)).
+
+
+[Youtube Demo for Milestone 5](https://youtu.be/qwATc6cMqR8)
+
+![How the new dashboard looks like](https://github.com/Rekanice/swe-G2-iot-project/blob/fe0e162c5e2c1b701822b52d4fc0dace6c6adb8d/new_dashboard.png)
+
