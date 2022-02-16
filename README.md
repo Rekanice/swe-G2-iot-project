@@ -30,6 +30,7 @@ L Test              - A Python script to test collaborating on Github (Milestone
     2. [Milestone 4: Send sensor data to database, Flask server reads data from database](#mi4)
     3. [Milestone 5: Dashboard UI improvements](#mi5)
 
+3. [Demo Videos Rewind](#rewind)
 
 
 
@@ -99,9 +100,9 @@ A full stack IOT application to automate the checking if a washing machine is bu
 ```
 HTTP
 ```
-*Will test out & choose the one that suits our use case after testing.*
 
 <br/>
+
 
 ### Cloud Platform & Web server <a name="cloud"></a>
 ```
@@ -120,12 +121,11 @@ This is the accompanying article on [Deploying the Flask / Django app in Heroku]
 
 ### Dashboard Frontend <a name="ui"></a>
 ```
-Web    : Basic HTML-CSS-JS or Flutter
-Mobile : MIT Inventor or Flutter
+Web    : Basic HTML-CSS-JS
+Mobile : MIT Inventor
 ```
-*Will test out & choose the one that can be executed well.*
 
-Here is a [video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app prototype made in MIT App Inventor.
+Here is a [demo video](https://www.youtube.com/watch?v=bYe--Yvlxbc) of the mobile app prototype made in MIT App Inventor.
 
 <br/>
 
@@ -150,7 +150,7 @@ The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku
 
 [Heroku web app](https://idle-washer.herokuapp.com/)
 
-[Demo video](https://youtu.be/WuiT0wlSRcE)
+[Demo video for milestone 3](https://youtu.be/WuiT0wlSRcE)
 
 ![Sensor setup](https://github.com/Rekanice/swe-G2-iot-project/blob/bbef47352ffa9df50c8eafda36a5559154607df4/images/ldr.jpg)
 
@@ -162,7 +162,7 @@ The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku
 
 The ESP8266 sends the light sensor data to the Flask web server hosted on Heroku via HTTP POST requests. The Flask server has a dedicated url to accept & parse the POST request & store the data into the connected PostgreSQL database. The Flask web app dynamically updates the UI by querying necessary data from the database, and processing them in the application to be delivered in the UI templates.
 
-[Demo video](https://youtu.be/-4hxKUfy3Ok)
+[Demo video for Milestone 4](https://youtu.be/-4hxKUfy3Ok)
 
 Database tables design: 
 1. Washing_Machine : contains all the attributes about the washing machines.
@@ -193,4 +193,16 @@ The repository for cloning and reproducing our milestone 5 Flask app is transfer
 [Youtube Demo for Milestone 5](https://youtu.be/qwATc6cMqR8)
 
 ![How the new dashboard looks like](https://github.com/Rekanice/swe-G2-iot-project/blob/fe0e162c5e2c1b701822b52d4fc0dace6c6adb8d/new_dashboard.png)
+
+
+<br/>
+
+# Milestones Demo Videos Rewind <a name="rewind"></a>
+
+
+1. Milestone 1 [Part 1](https://youtu.be/BIsVwdGV0DI) [Part 2](https://youtu.be/cB8r0cHiGOs) [Part 3](https://youtu.be/qsbzFyFUOwY)
+2. Milestone 2 [Heroku Deployment](https://youtu.be/oEzaFD8RCEE) [UI Prototype](https://www.youtube.com/watch?v=bYe--Yvlxbc)
+3. [Milestone 3 video](https://youtu.be/WuiT0wlSRcE)
+4. [Milestone 4 video](https://youtu.be/-4hxKUfy3Ok)
+5. [Milestone 5 video](https://youtu.be/qwATc6cMqR8)
 
